@@ -1,5 +1,7 @@
 package com.Bean;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -7,16 +9,18 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CustomerBean {
-	Integer cid;
+public class ProductBean {
+	Integer productId;
 	@NotBlank
-	String firstname;
+	String productName;
 	@NotBlank
-	String gender;
+	String category;
 	@NotBlank
-	String email;
+	Float price;
 	@NotBlank
-	String password;
-	String role;
-	String otp;
+	Integer qty;
+	@NotBlank
+	MultipartFile productImage;
+	
+	String productImagePath;
 }

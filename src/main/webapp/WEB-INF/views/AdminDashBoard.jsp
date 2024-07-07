@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Admin Dash Board</h1>
-<br><br>
-<a href="logout">Logout</a>
+<a href="logout">Logout</a><br><br>
+<a href="product">ADD NEW PRODUCT</a>
 </body>
 </html>

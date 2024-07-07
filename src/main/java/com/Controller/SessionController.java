@@ -1,6 +1,8 @@
 package com.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,12 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Bean.CustomerBean;
 import com.Dao.CustomerDao;
+import com.Dao.ProductDao;
 import com.Service.OtpService;
 
 @Controller
 public class SessionController {
 	
-	@Autowired
+    @Autowired
+    JavaMailSender mailSender;
+	
+	@Autowired	
 	CustomerDao dao;
 	
 	@Autowired
@@ -25,6 +31,11 @@ public class SessionController {
 	
 	@Autowired
 	OtpService service;
+	
+	@GetMapping("/")
+	public String welcomePage() {
+		return "WelcomePage";
+	}
 	
 	@GetMapping("/signup")
 	public String signup() {
@@ -112,9 +123,32 @@ public class SessionController {
 		else {
 			//otp genrate
 			String otp = service.otpGenerater();
-//			System.out.println(otp);
+			System.out.println(otp);
 			//user:email:otp
 			//send mail  in otp
+			SimpleMailMessage message = new SimpleMailMessage();
+			message.setFrom("riddhmodi2003@gmail.com");
+		    message.setTo(email);
+		    message.setSubject("OTP SEND BY ECOMAPP");
+		    message.setText("OTP is : "+otp);
+
+		    mailSender.send(message);
+		    dao.updateotp(email,otp);
+			return "VerifyOtp";
+		}
+	}
+	
+	@PostMapping("/updatepassword")
+	public String updatePassword(CustomerBean customerBean,Model model) {
+		boolean status = dao.verifyotp(customerBean.getEmail(),customerBean.getOtp());
+		if(status == true) {
+			String password = encoder.encode(customerBean.getPassword());
+			dao.updatePassowrd(customerBean.getEmail(),password);
+			dao.updateotp(customerBean.getEmail(),"");
+			return "redirect:/login";
+		}
+		else {
+			model.addAttribute("error","Data invaild.");
 			return "VerifyOtp";
 		}
 	}

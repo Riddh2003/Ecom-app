@@ -9,4 +9,9 @@ public class AdminController {
 	public String adminDashBoard() {
 		return "AdminDashBoard";
 	}
+	
+	@GetMapping("/product")
+	public String product(){
+		return "redirect:/newproduct";
+	}
 }

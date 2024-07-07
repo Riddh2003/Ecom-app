@@ -23,5 +23,27 @@ public class CustomerDao {
 		CustomerBean customer = stmt.queryForObject("select * from customer where email = ?",new BeanPropertyRowMapper<>(CustomerBean.class),email);
 		return customer;
 	}
+
+	public void updateotp(String email, String otp) {
+		// TODO Auto-generated method stub
+		stmt.update("update customer set otp = ? where email = ?", otp,email);
+	}
+
+	public boolean verifyotp(String email, String otp) {
+		try {			
+			CustomerBean customerBean = authenticateCustomerByEmail(email);
+			if(customerBean.getOtp().equals(otp)) {
+				return true;
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public void updatePassowrd(String email, String password) {
+		// TODO Auto-generated method stub
+		stmt.update("update customer set password = ? where email = ?",password,email);
+	}
 	
 }
