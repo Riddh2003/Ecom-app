@@ -21,6 +21,5 @@ public class ProductBean {
 	Integer qty;
 	@NotBlank
 	MultipartFile productImage;
-	
 	String productImagePath;
 }

@@ -32,9 +32,6 @@
 			<div class="flex items-center justify-between">
 				<button class="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">ADD PRODUCT</button>
 			</div>
-			<div class="mt-4 text-center">
-				<a class="inline-block align-baseline font-bold text-sm text-pink-500 hover:text-pink-600" href="products">List Product</a>
-			</div>
 		</form>
 	</div>
 </body>
