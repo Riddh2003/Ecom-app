@@ -19,9 +19,7 @@ public class CustomerController {
 	ProductDao productDao;
 
 	@GetMapping("/customerhomepage")
-	public String customerHomePage(Model model) {
-		List<ProductBean> products = productDao.getAllProduct();
-		model.addAttribute("products",products);
+	public String customerHomePage(){
 		return "HomePage";
 	}
 

@@ -1,103 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Login</title>
-<style type="text/css">
-body {
-	font-family: Arial, sans-serif;
-	background-color: black;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0;
-}
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+	<!DOCTYPE html>
+	<html lang="en">
 
-.error {
-	background: linear-gradient(45deg, #FF512F, #DD2476, #FF512F, #DD2476);
-	/* Define your gradient */
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font-size: 25px;
-}
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Home Page</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
 
-.login-container {
-	background-color: transparent;
-	padding: 20px;
-	border: 2px solid white;
-	border-radius: 15px;
-	width: 300px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
+	<body class="bg-gray-900 flex items-center justify-center w-full h-screen">
+		<div class="w-full p-4 sm:p-10 flex items-center justify-center">
+			<div class="border-2 border-white rounded-3xl p-5 text-white flex flex-col items-center w-full sm:w-3/4 md:w-1/2 lg:w-1/4">
+				<strong class="error text-red-500 text-2xl">${error}</strong>
+				<h1 class="text-4xl text-pink-500 font-medium">Login</h1><br>
+				<form action="authenticate" method="post" class="flex flex-col w-11/12 sm:w-full">
+					<div class="flex flex-col w-full sm:w-full">
+						<label class="text-xl font-medium text-pink-500">Email:</label>
+						<input type="text" name="email"
+							class="bg-transparent border-2 border-white rounded-lg p-2 h-10 text-white">
+					</div>
+					<div class="flex flex-col w-full sm:w-full mt-2">
+						<label class="text-xl font-medium text-pink-500">Password:</label>
+						<input type="password" name="password"
+							class="bg-transparent border-2 border-white rounded-lg p-2 h-10 text-white">
+					</div>
+					<div class="flex flex-col w-full sm:w-full mt-6 text-center gap-3">
+						<input type="submit" value="LOGIN"
+							class="text-2xl font-semibold border-2 border-white rounded-full h-10 text-white hover:bg-pink-400 hover:border-pink-400"/>
+						<p>Don't have an account? <a href="register" class="text-pink-500 text-xl">Sign Up</a></p>
+						<p class="text-pink-500 text-xl"><a href="">Forget Password?</a></p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
 
-h1 {
-	font-size: 30px;
-	font-weight: 600;
-	background: linear-gradient(45deg, #FF512F, #DD2476, #FF512F, #DD2476);
-	/* Define your gradient */
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.login-form {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	margin-bottom: 10px;
-}
-
-label {
-	font-weight: bold;
-	font-size: 20px;
-	background: linear-gradient(45deg, #FF512F, #DD2476, #FF512F, #DD2476);
-	/* Define your gradient */
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-input[type="email"], input[type="password"] {
-	width: calc(100% - 20px);
-	padding: 10px;
-	font-size: 12px;
-	color: white;
-	border: 2px solid #ccc;
-	border-radius: 10px;
-	font-size: 16px;
-	background-color: transparent;
-}
-
-.login-button {
-	width: 100%;
-	padding: 8px;
-	color: white;
-	background-color: transparent;
-	border: 2px solid;
-	border-radius: 10px;
-	cursor: pointer;
-	font-size: 20px;
-	font-weight: 600;
-	transition: background-color 0.3s;
-}
-
-.login-button:hover {
-	background: linear-gradient(45deg, #FF512F, #DD2476, #FF512F, #DD2476);
-}
-
-form a {
-	text-decoration: none;
-	text-align: center;
-	color: #ff416c;
-	font-size: 20px;
-}
-</style>
-</head>
-<body>
+	</html>
+	<!-- <body>
 	<div class="login-container">
 		<strong class="error">${error}</strong>
 		<h1>Login</h1>
@@ -112,4 +52,4 @@ form a {
 		</form>
 	</div>
 </body>
-</html>
+</html> -->
