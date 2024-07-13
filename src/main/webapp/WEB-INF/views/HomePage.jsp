@@ -37,13 +37,39 @@
                         <img class="w-11/12 md:w-1/4" src="https://dxbapps.com/blogimages/ecommerce.gif"
                             alt="EcomApp Image">
                     </div>
-                    <div class="mt-6">
-                        <a href="homelistproduct"
-                            class="border-2 border-black text-blue-500 rounded-xl p-2 flex flex-col items-center cursor-pointer hover:text-black hover:bg-blue-300 hover:border-blue-300">
-                            <img class="w-60"
-                                src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/26-512.png" />
-                            <h1 class="font-bold text-2xl mt-1">PRODUCT LIST</h1>
-                        </a>
+                    <div class="w-full mt-6 flex flex-row flex-wrap gap-10 items-center justify-center">
+                        <div>
+                            <a href="homelistproduct"
+                                class="border-2 border-black text-blue-500 rounded-xl p-2 flex flex-col items-center cursor-pointer hover:text-black hover:bg-blue-300">
+                                <img class="w-60"
+                                    src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/26-512.png" />
+                                <h1 class="font-bold text-2xl mt-1">PRODUCT LIST</h1>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="homelistproduct"
+                                class="border-2 border-black text-blue-500 rounded-xl p-2 flex flex-col items-center cursor-pointer hover:text-black hover:bg-blue-300">
+                                <img class="w-60"
+                                    src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/26-512.png" />
+                                <h1 class="font-bold text-2xl mt-1">PRODUCT LIST</h1>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="homelistproduct"
+                                class="border-2 border-black text-blue-500 rounded-xl p-2 flex flex-col items-center cursor-pointer hover:text-black hover:bg-blue-300">
+                                <img class="w-60"
+                                    src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/26-512.png" />
+                                <h1 class="font-bold text-2xl mt-1">PRODUCT LIST</h1>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="homelistproduct"
+                                class="border-2 border-black text-blue-500 rounded-xl p-2 flex flex-col items-center cursor-pointer hover:text-black hover:bg-blue-300">
+                                <img class="w-60"
+                                    src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/26-512.png" />
+                                <h1 class="font-bold text-2xl mt-1">PRODUCT LIST</h1>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

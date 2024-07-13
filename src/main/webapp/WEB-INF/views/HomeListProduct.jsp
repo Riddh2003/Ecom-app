@@ -1,111 +1,63 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Home page list of product</title>
-</head>
-<style>
-body {
-	background-color: black;
-	font-family: sans-serif;
-}
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+		<!DOCTYPE html>
+		<html lang="en">
 
-.bottompart {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin-top: 1.5rem;
-	flex-wrap: wrap;
-}
-.bottompart .home{
-	text-decoration: none;
-	border-radius: 5px;
-	background-color: #1e90ff;
-	color: white;
-	padding: 10px;
-	font-size: 20px;
-	font-weight: bold;
-}
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Home page list of product</title>
+			<script src="https://cdn.tailwindcss.com"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		</head>
 
-.bottompart h2 {
-	background: linear-gradient(45deg, #FF512F, #DD2476, #FF512F, #DD2476);
-	/* Define your gradient */ -webkit-background-clip : text;
-	-webkit-text-fill-color : transparent;
-	font-weight: bold;
-	font-size: 30px;
-	margin-top: 1rem;
-	margin-left: 3rem;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.products {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	color: #f70776;
-	width: 100%;
-	padding: 1rem 0;
-}
-
-.box {
-	display: flex;
-	flex-direction: column;
-	align-content: center; margin-top : 0.5rem;
-	color: #f70776;
-	border: 2px solid white;
-	border-radius: 10px;
-	padding: 10px;
-	font-weight: bold;
-	margin-top: 0.5rem;
-}
-
-.box img {
-	border-radius: 10px;
-}
-
-.box button {
-	padding: 10px;
-	background-color: transparent;
-	color: #f70776;
-	border: 2px solid white;
-	border-radius: 5px;
-	font-size: 15px;
-	font-weight: bold;
-	cursor: pointer;
-}
-
-.box button:hover {
-	border: 2px solid #d52778;
-	background-color: #d52778;
-	color: white;
-}
-</style>
-<body>
-	<div class="bottompart">
-		<h2>HOME PAGE LIST OF PRODUCTS</h2>
-		<a class="home" href="customerhomepage">HOME</a>
-		<div class="products">
-			<c:forEach items="${products}" var="p">
-				<div class="box">
-					<img src="${p.productImagePath}" width="250px" height="250px"><br>
-					<div>
-						<h1>${p.productName}</h1>
-						<p>${p.category}</p>
-						<p>Rs. ${p.price}</p>
-						<p>In Stock: ${p.qty}</p>
-						<div>
-							<a href="addtocart?productId=${p.productId}"><button>ADD
-									TO CART</button></a> <a href="showproduct?productId=${p.productId}"><button>VIEW</button></a>
-						</div>
-					</div>
+		<body class="font-sans text-gray-700 bg-gray-100">
+			<nav class="bg-gray-900 text-white p-2 sticky top-0 z-10">
+				<div class="container mx-auto flex justify-between items-center">
+					<h1 class="text-2xl md:text-4xl font-medium cursor-pointer md:ml-10">Product List</h1>
+					<a href="customerhomepage"
+						class="text-xl md:text-2xl font-medium md:mr-10 hover:bg-gray-700 rounded-md p-2 transition duration-300">Home</a>
 				</div>
-			</c:forEach>
-		</div>
-	</div>
-</body>
-</html>
+			</nav>
+
+			<section class="container mx-auto px-4 py-8">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 m-10">
+					<c:forEach items="${products}" var="p">
+						<div class="bg-white rounded-lg shadow-md overflow-hidden">
+							<div class="relative h-64">
+								<c:if test="${p.productImagePath == null || p.productImagePath.length() == 0}">
+									<img src="images/products/noproduct.jpg" class="w-full h-full object-cover">
+								</c:if>
+								<c:if test="${!(p.productImagePath == null || p.productImagePath.length() == 0)}">
+									<img src="${p.productImagePath}" class="w-full h-full object-cover">
+								</c:if>
+								<ul
+									class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 flex justify-center space-x-4 py-3 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+									<li><a href="#"
+											class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+												class="fas fa-shopping-cart"></i></a></li>
+									<li><a href="#"
+											class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+												class="fas fa-heart"></i></a></li>
+									<li><a href="#"
+											class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+												class="fas fa-plus"></i></a></li>
+									<li><a href="showproduct?productId=${p.productId}"
+											class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+												class="fas fa-eye"></i></a></li>
+								</ul>
+							</div>
+							<div class="p-4 mt-10">
+								<h3 class="text-lg font-semibold mb-2">${p.productName}</h3>
+								<div class="flex justify-between items-center">
+									<span class="text-gray-500 line-through">Rs. ${(p.price * 0.05)+p.price}</span>
+									<span class="text-xl font-bold text-gray-900">Rs. ${p.price}</span>
+								</div>
+							</div>
+						</div>
+					</c:forEach>
+				</div>
+			</section>
+		</body>
+
+		</html>

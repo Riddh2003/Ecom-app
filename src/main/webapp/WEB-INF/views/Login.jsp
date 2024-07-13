@@ -18,8 +18,9 @@
 					Login</h3>
 			</nav>
 		</div>
-		<div class="w-full p-4 sm:p-10 flex w-full h-full direction-row items-center justify-center ">
-			<div class="bg-gray-800 rounded-3xl p-5 flex flex-col items-center w-full sm:w-3/4 md:w-1/2 lg:w-1/4">
+		<div class="w-full h-full p-4 sm:p-10 flex direction-row items-center justify-center ">
+			<div
+				class="bg-gray-600 rounded-3xl p-5 flex flex-col shadow-2xl items-center w-full sm:w-3/4 md:w-1/2 lg:w-1/4">
 				<strong class="error text-red-600 text-2xl">${error}</strong>
 				<h1 class="text-3xl text-blue-400 font-medium">Login</h1><br>
 				<form action="authenticate" method="post" class="flex flex-col w-11/12 sm:w-full">

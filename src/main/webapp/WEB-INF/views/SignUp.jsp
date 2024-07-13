@@ -1,131 +1,66 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>SignUp Page</title>
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+	<!DOCTYPE html>
+	<html>
 
-body {
-	background-color: Black;
-	font-family: sans-serif;
-}
+	<head>
+		<meta charset="ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SignUp Page</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
 
-header nav {
-	position: relative;
-	width: 100%;
-	height: 10vh;
-	border-bottom: 3px solid;
-	border-image: linear-gradient(45deg, #FF512F, #DD2476) 1;
-	display: flex;
-	padding: 0 10%;
-	justify-content: space-between;
-	align-items: center;
-}
+	<body class="bg-white flex flex-col w-full h-screen">
+		<div>
+			<nav class="bg-gray-900 text-white p-3 flex justify-between md:pl-20 md:pr-20 items-center">
+				<h1 class="text-2xl font-medium md:text-4xl cursor-pointer"><a>eCommerce</a></h1>
+				<h3
+					class="relative text-2xl md:text-3xl font-medium cursor-pointer hover:text-blue-400 hover:text-2xl md:hover:text-3xl hover:font-medium rounded-md p-1.5 md:block">
+					SignUp</h3>
+			</nav>
+		</div>
+		<div class="w-full h-full flex p-6 sm:p-10 direction-row items-center justify-center">
+			<div
+				class="bg-gray-600 rounded-3xl p-5 flex flex-col shadow-2xl items-center w-full sm:w-3/4 md:w-1/2 lg:w-96">
+				<h1 class="text-3xl text-blue-400 font-medium">SignUp</h1><br>
+				<form action="signup" method="post" class="flex flex-col w-11/12 sm:w-full gap-3 mt-3">
+					<div class="flex flex-col w-full sm:w-full">
+						<label class="text-xl font-medium text-blue-400">First Name : ${error}</label>
+						<input type="text" name="firstname" value="${data.firstname}"
+							class="bg-transparent border-2 border-white rounded-lg p-2 h-10 text-white" />
+					</div>
+					<div class="flex flex-col w-full sm:w-full">
+						<label class="text-xl font-medium text-blue-400">Gender : ${error}</label>
+						<select name="gender"
+							class="bg-transparent border-2 border-white rounded-lg p-2 h-10 text-white">
+							<option class="text-black" value="-1">---------Select Gender----------</option>
+							<option class="text-black" value="Male" ${data.gender.equals("Male")?"selected":""}>Male
+							</option>
+							<option class="text-black" value="Female" ${data.gender.equals("Female")?"selected":""}>
+								Female</option>
+							<option class="text-black" value="Others" ${data.gender.equals("Others")?"selected":""}>
+								Others</option>
+						</select>
+					</div>
+					<div class="flex flex-col w-full sm:w-full mt-2">
+						<label class="text-xl font-medium text-blue-400">Email : ${error}</label>
+						<input type="email" name="email" value="${data.email}"
+							class="bg-transparent border-2 border-white rounded-lg p-2 h-10 text-white" />
+					</div>
+					<div class="flex flex-col w-full sm:w-full mt-2">
+						<label class="text-xl font-medium text-blue-400">Password : ${error}</label>
+						<input type="password" name="password" value="${data.password}"
+							class="bg-transparent border-2 border-white rounded-lg p-2 h-10 text-white" />
+					</div>
+					<div class="flex flex-col w-full sm:w-full mt-6 mb-3 text-center gap-3">
+						<input type="hidden" name="role" value="customer" />
+						<input type="submit" name="submit" value="SIGN UP"
+							class="bg-transparent cursor-pointer text-2xl font-semibold border-2 border-white rounded-full h-10 text-blue-400 hover:bg-blue-400 hover:border-blue-400 hover:text-white" />
+						<p class="text-white text-lg sm:text-md">Already have an account? <a href="login"
+								class="text-blue-400 text-2xl font-medium">Login</a></p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
 
-nav p {
-	cursor: pointer;
-	font-size: 30px;
-	font-weight: 600;
-}
-
-nav h1 {
-	font-size: 50px;
-	cursor: pointer;
-}
-
-nav .font {
-	background: linear-gradient(45deg, #FF512F, #DD2476, #FF512F, #DD2476);
-	/* Define your gradient */
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-#signup {
-	border: 3px solid white;
-	border-radius: 20px;
-	width: 370px;
-	height: 400px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 10% 38%;
-}
-
-form strong {
-	background: linear-gradient(45deg, #FF512F, #DD2476, #FF512F, #DD2476);
-	/* Define your gradient */
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font-size: 20px;
-	font-weight: 600;
-}
-
-form input, select {
-	width: 40vb;
-	height: 4vh;
-	border: 2px solid white;
-	border-radius: 5px;
-	background-color: transparent;
-	color: white;
-	padding: 5px;
-}
-
-select option {
-	width: 100%;
-	background-color: transparent;
-	color: black;
-}
-
-form input[type="submit"] {
-	width: 20vb;
-	font-size: 15px;
-	font-weight: 600;
-	border: 0;
-	background: linear-gradient(45deg, #FF512F, #DD2476, #FF512F, #DD2476);
-	cursor: pointer;
-}
-
-form a {
-	text-decoration: none;
-	text-align: center;
-	color: #ff416c;
-	font-size: 20px;
-}
-</style>
-</head>
-<body>
-	<header>
-		<nav>
-			<h1 class="font">eComApp</h1>
-			<p class="font">SignUp</p>
-		</nav>
-	</header>
-	<div id="signup">
-		<form action="signup" method="post">
-			<strong><label>FirstName : ${error}</label></strong><br> <input
-				type="text" name="firstname" value="${data.firstname}" /> <br>
-			<br> <strong><label>Gender : ${error}</label></strong><br>
-			<select name="gender">
-				<option value="-1">---------Select Gender----------</option>
-				<option value="Male" ${data.gender.equals("Male")?"selected":""}>Male</option>
-				<option value="Female" ${data.gender.equals("Female")?"selected":""}>Female</option>
-				<option value="Others" ${data.gender.equals("Others")?"selected":""}>Others</option>
-			</select> <br>
-			<br> <strong><label>Email : ${error}</label></strong><br> 
-			<input type="email" name="email" value="${data.email}" /> <br><br> 
-			<strong><label>Password : ${error}</label></strong><br>
-			<input type="password" name="password" value="${data.password}" /> <br><br> 
-			<input type="hidden" name="role" value="customer" /> 
-			<input type="submit" name="submit" value="SIGN UP" /> 
-			<a href="login">Login</a>
-		</form>
-	</div>
-</body>
-</html>
+	</html>
