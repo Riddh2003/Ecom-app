@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.Bean.CartBean;
 import com.Bean.CustomerBean;
 import com.Bean.ProductBean;
 import com.Dao.CardDao;
@@ -16,7 +17,7 @@ import com.Dao.ProductDao;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-public class CardController {
+public class CustomerCardController {
 	@Autowired
 	CardDao cardDao;
 	
@@ -32,7 +33,10 @@ public class CardController {
 	@GetMapping("/addtocart")
 	public String addToCart(@RequestParam("productId") Integer productId,HttpSession session) {
 		CustomerBean customerBean = (CustomerBean)session.getAttribute("customer");
-		cardDao.addcart(productId, customerBean.getCid());
-		return "redirect:/customerhomepage";
+		CartBean bean = new CartBean();
+		bean.setCid(customerBean.getCid());
+		bean.setProductId(productId);
+		cardDao.addcart(bean);
+		return "redirect:/homelistproduct";
 	}
 }

@@ -11,13 +11,19 @@
         </head>
 
         <body class="bg-white">
+            <script>
+
+            </script>
             <div>
                 <nav class="fixed w-full bg-gray-900 text-white p-3 flex justify-between items-center border-b-2">
-                    <div class="relative flex items-start justify-around w-1/3 sm:w-1/4 sm:text-xs">
+                    <div class="relative flex items-start justify-around w-1/3 sm:w-1/3 sm:text-xs md:ml-6">
                         <h1 class="text-2xl font-medium md:text-4xl cursor-pointer"><a>eCommerce</a></h1>
                         <h3
                             class="relative text-2xl font-medium cursor-pointer hover:bg-gray-500 rounded-md p-1.5 hidden md:block">
-                            Home</h3>
+                            <a href="customerhomepage">Home</a> </h3>
+                        <h3
+                            class="relative text-2xl font-medium cursor-pointer hover:bg-gray-500 rounded-md p-1.5 hidden md:block">
+                            <a href="homelistproduct">Product List</a></h3>
                     </div>
                     <div class="sm:flex sm:items-center sm:text-xs">
                         <button
@@ -25,43 +31,22 @@
                                 href="logout">Logout</a></button>
                     </div>
                 </nav>
-                <div class="w-full p-10 flex flex-col items-center justify-center">
+                <div class="w-full p-10 flex flex-col items-center justify-center" id="content">
                     <div class="mt-12 flex flex-row items-center flex-wrap-reverse justify-around w-full">
                         <div class="flex flex-col w-full sm:w-1/2 text-center sm:text-left sm:items-start">
-                            <h1 class="mt-1 text-2xl md:text-4xl font-medium text-center">Welcome To 
-                                <span class="text-3xl md:text-4xl text-blue-500">eCommerce Application!</span></h1>
-                            <p class="mt-3 text-lg hidden md:block">We're delighted to have you here. At eCommerce, we strive to bring you the best deals and
+                            <h1 class="mt-1 text-2xl md:text-4xl font-medium text-center">Welcome To
+                                <span class="text-3xl md:text-4xl text-blue-500">eCommerce Application!</span>
+                            </h1>
+                            <p class="mt-3 text-lg hidden md:block">We're delighted to have you here. At eCommerce, we
+                                strive to bring you the best deals and
                                 highest quality products all in one place. Discover an amazing range of items at
-                                unbeatable prices, and enjoy a seamless shopping experience. <span class="text-2xl text-blue-500 font-medium">Happy shopping!&#128522</span></p>
+                                unbeatable prices, and enjoy a seamless shopping experience. <span
+                                    class="text-2xl text-blue-500 font-medium">Happy shopping!&#128522</span></p>
                         </div>
                         <img class="w-11/12 md:w-1/4" src="https://dxbapps.com/blogimages/ecommerce.gif"
                             alt="EcomApp Image">
                     </div>
                     <div class="w-full mt-6 flex flex-row flex-wrap gap-10 items-center justify-center">
-                        <div>
-                            <a href="homelistproduct"
-                                class="border-2 border-black text-blue-500 rounded-xl p-2 flex flex-col items-center cursor-pointer hover:text-black hover:bg-blue-300">
-                                <img class="w-60"
-                                    src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/26-512.png" />
-                                <h1 class="font-bold text-2xl mt-1">PRODUCT LIST</h1>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="homelistproduct"
-                                class="border-2 border-black text-blue-500 rounded-xl p-2 flex flex-col items-center cursor-pointer hover:text-black hover:bg-blue-300">
-                                <img class="w-60"
-                                    src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/26-512.png" />
-                                <h1 class="font-bold text-2xl mt-1">PRODUCT LIST</h1>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="homelistproduct"
-                                class="border-2 border-black text-blue-500 rounded-xl p-2 flex flex-col items-center cursor-pointer hover:text-black hover:bg-blue-300">
-                                <img class="w-60"
-                                    src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-3/3/26-512.png" />
-                                <h1 class="font-bold text-2xl mt-1">PRODUCT LIST</h1>
-                            </a>
-                        </div>
                         <div>
                             <a href="homelistproduct"
                                 class="border-2 border-black text-blue-500 rounded-xl p-2 flex flex-col items-center cursor-pointer hover:text-black hover:bg-blue-300">

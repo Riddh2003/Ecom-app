@@ -1,102 +1,95 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>List Products</title>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #000;
-        color: #fff;
-        padding: 20px;
-    }
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    h1 {
-        color: #fff;
-        margin-bottom: 20px;
-    }
-    table {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    .table th, .table td {
-        border: 1px solid white;
-        vertical-align: middle;
-        color: #fff;
-    }
-    .table th {
-        background-color: #333;
-    }
-    .table img {
-    	border:2px solid white;
-        border-radius: 5px;
-    }
-    .action-links a {
-        margin-right: 10px;
-    }
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-    }
-    .btn-secondary {
-        background-color: #6c757d;
-        border-color: #6c757d;
-    }
-    .btn-danger {
-        background-color: #dc3545;
-        border-color: #dc3545;
-    }
-    .btn-info {
-        background-color: #17a2b8;
-        border-color: #17a2b8;
-    }
-    .btn-primary:hover, .btn-secondary:hover, .btn-danger:hover, .btn-info:hover {
-        opacity: 0.8;
-    }
-</style>
-</head>
-<body>
-	<div class="container">
-		<h1>List Products</h1>
-		<div class="mb-4">
-			<a href="newproduct" class="btn btn-primary">New Product</a>
-			<a href="admindashboard" class="btn btn-secondary">Home</a>
-		</div>
-		<table class="table">
-			<thead class="thead-dark">
-				<tr>
-					<th>Product ID</th>
-					<th>Product Name/Category</th>
-					<th>Product Image</th>
-					<th>Product Price</th>
-					<th>Product Qty</th>
-					<th>Action</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${products}" var="p">
-					<tr>
-						<td>${p.productId}</td>
-						<td>${p.productName}<br>${p.category}</td>
-						<td><img width="150px" height="200px" src="${p.productImagePath}"/></td>
-						<td>${p.price}</td>
-						<td>${p.qty}</td>
-						<td class="action-links">
-							<a href="deleteproduct?productId=${p.productId}" class="btn btn-danger btn-sm">DELETE</a>
-							<a href="viewproduct?productId=${p.productId}" class="btn btn-info btn-sm">VIEW</a>
-						</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-</body>
-</html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>List Products</title>
+            <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+            <style>
+                .sidebar {
+                    position: fixed;
+                    top: 64px;
+                    left: 0;
+                    right: 0;
+                    background-color: rgba(98, 98, 98, 0.9);
+                    padding: 1rem;
+                    z-index: 50;
+                }
+
+                .sidebar-header {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+            </style>
+        </head>
+
+        <body class="bg-gray-100 text-gray-800">
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.querySelector(".sidebar");
+                    sidebar.classList.toggle("hidden");
+                    sidebar.innerHTML = `<div class="sidebar-header">
+            <a href="admindashboard" class="text-white hover:underline hover:underline-offset-8">Home</a>
+            <a href="newproduct" class="text-white hover:underline hover:underline-offset-8">Add New Product</a>
+            <a href="#" class="text-white hover:underline hover:underline-offset-8">About</a>
+            <a href="#" class="text-white hover:underline hover:underline-offset-8">Contact</a>
+        </div>`;
+                }
+            </script>
+            <!-- Navbar -->
+            <nav class="bg-gray-900 p-3">
+                <div class="container mx-auto flex justify-between items-center">
+                    <a href="#" class="text-white text-3xl font-bold md:ml-10">eCommerce</a>
+                    <div class="hidden md:flex space-x-4 md:mr-10">
+                        <a href="admindashboard" class="text-white hover:text-gray-200">Home</a>
+                        <a href="newproduct" class="text-white hover:text-gray-200">AddNewProduct</a>
+                    </div>
+                    <button class="md:hidden text-white" onclick="toggleSidebar()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+            <div class="sidebar hidden md:hidden"></div>
+            <div class="container mx-auto px-4 py-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <c:forEach items="${products}" var="p">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <img class="w-full h-64 object-cover" src="${p.productImagePath}" alt="${p.productName}" />
+                            <div class="p-4">
+                                <h2 class="text-xl font-semibold mb-2">${p.productName}<span>
+                                        ${p.category}</span></h2>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-lg font-bold">$${p.price/80}</span>
+                                    <span class="text-gray-600">Qty: ${p.qty}</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">ID: ${p.productId}</span>
+                                    <div>
+                                        <a href="addtocart?productId=${p.productId}"
+                                            class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+                                                class="fas fa-trash"></i></a>
+                                        <a href="viewproduct?productId=${p.productId}"
+                                            class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+                                                class="fas fa-eye"></i></a>
+                                        <a href="#"
+                                            class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+                                                class="fas fa-edit"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+            </div>
+        </body>
+
+        </html>
