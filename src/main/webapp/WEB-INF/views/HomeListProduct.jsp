@@ -18,8 +18,11 @@
 		<div class="container mx-auto flex justify-between items-center">
 			<h1 class="text-2xl md:text-4xl font-medium cursor-pointer md:ml-10">Product
 				List</h1>
-			<a href="customerhomepage"
-				class="text-xl md:text-2xl font-medium md:mr-10 hover:bg-gray-700 rounded-md p-2 transition duration-300">Home</a>
+			<div>			
+				<a href="customerhomepage"
+					class="text-xl md:text-2xl font-medium md:mr-10 hover:bg-gray-700 rounded-md p-2 transition duration-300">Home</a>
+				<a href="mycart" class="text-xl md:text-2xl font-medium md:mr-10 hover:bg-gray-700 rounded-md p-2 transition duration-300">My Cart</a>
+			</div>
 		</div>
 	</nav>
 

@@ -39,4 +39,13 @@ public class CustomerCardController {
 		cardDao.addcart(bean);
 		return "redirect:/homelistproduct";
 	}
+	
+	@GetMapping("/mycart")
+	public String mycart(HttpSession session,Model model) {
+		CustomerBean customer = (CustomerBean) session.getAttribute("customer");
+		Integer cid = customer.getCid();
+		List<ProductBean> products = cardDao.cart(cid);
+		model.addAttribute("products",products);
+		return "MyCart";
+	}
 }
