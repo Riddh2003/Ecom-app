@@ -33,7 +33,7 @@
         <!-- Product Details Section -->
         <div class="container mx-auto mt-8 flex justify-center">
             <div
-                class="w-full bg-white p-6 mx-4 md:mx-10 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-10">
+                class="w-8/12 bg-white p-6 mx-4 md:mx-10 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-10">
                 <div class="w-full md:w-1/2">
                     <img src="${product.productImagePath}" alt="${product.productName}"
                         class="w-full h-96 mb-4 rounded-lg shadow-lg">
@@ -54,6 +54,9 @@
                             <option value="yellow">Yellow</option>
                         </select>
                     </div>
+                    <a href="addtocart?productId=${p.productId}"
+                        class="w-1/2 bg-yellow-500 hover:bg-yellow-600 text-white text-lg text-center font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"><button>Add
+                            to Cart</button></a>
                 </div>
             </div>
         </div>

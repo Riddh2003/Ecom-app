@@ -14,7 +14,7 @@
 </head>
 
 <body class="font-sans text-gray-700 bg-gray-100">
-	<nav class="bg-gray-900 text-white p-2 sticky top-0 z-10">
+	<nav class="bg-gray-900 text-white p-3 sticky top-0 z-10">
 		<div class="container mx-auto flex justify-between items-center">
 			<h1 class="text-2xl md:text-4xl font-medium cursor-pointer md:ml-10">Product
 				List</h1>
@@ -28,7 +28,7 @@
 
 	<section class="container mx-auto px-4 py-8">
 		<div
-			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 m-10">
+			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 m-10">
 			<c:forEach items="${products}" var="p">
 				<div class="bg-white rounded-lg shadow-md overflow-hidden">
 					<div class="relative h-64 cursor-pointer">

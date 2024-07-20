@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.Bean.CartBean;
 import com.Bean.CustomerBean;
 import com.Bean.ProductBean;
-import com.Dao.CardDao;
+import com.Dao.CartDao;
 import com.Dao.ProductDao;
 
 import jakarta.servlet.http.HttpSession;
@@ -19,7 +19,7 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class CustomerCardController {
 	@Autowired
-	CardDao cardDao;
+	CartDao cartDao;
 	
 	@Autowired
 	ProductDao productDao;
@@ -36,16 +36,31 @@ public class CustomerCardController {
 		CartBean bean = new CartBean();
 		bean.setCid(customerBean.getCid());
 		bean.setProductId(productId);
-		cardDao.addcart(bean);
+		cartDao.addcart(bean);
 		return "redirect:/homelistproduct";
 	}
 	
 	@GetMapping("/mycart")
-	public String mycart(HttpSession session,Model model) {
+	public String myCart(HttpSession session,Model model) {
 		CustomerBean customer = (CustomerBean) session.getAttribute("customer");
 		Integer cid = customer.getCid();
-		List<ProductBean> products = cardDao.cart(cid);
+		List<ProductBean> products = cartDao.cart(cid);
 		model.addAttribute("products",products);
 		return "MyCart";
+	}
+
+	@GetMapping("/removefromcart")
+	public String removeFromCart(@RequestParam("productId") Integer productId,HttpSession session) {
+		CustomerBean customer = (CustomerBean)session.getAttribute("customer");
+		Integer cid = customer.getCid();
+		cartDao.removeProduct(cid,productId);
+		return "redirect:/mycart";
+	}
+
+	@GetMapping("/viewcartproduct")
+	public String viewCartProduct(@RequestParam("productId") Integer productId,Model model) {
+		ProductBean product = cartDao.myproduct(productId);
+		model.addAttribute("product",product);
+		return "ViewMyCartProduct";
 	}
 }

@@ -1,82 +1,47 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>ForgetPassword</title>
-<style>
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: 'Arial', sans-serif;
-        background-color: #000;
-        color: #fff;
-    }
-
-    form {
-        background-color: #333;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        width: 300px;
-        border: 1px solid #fff;
-    }
-
-    form label, form input, form a {
-        display: block;
-        margin-bottom: 10px;
-        color: #fff;
-    }
-
-    form input[type="email"], form input[type="submit"] {
-        width: calc(100% - 30px);
-        padding: 10px;
-        border: 2px solid #ccc;
-        font-size: 14px;
-        background-color: #000;
-        color: #fff;
-        border-radius: 10px;
-    }
-
-    form input[type="submit"] {
-        background: linear-gradient(to right, #ff416c, #ff4b2b);
-        color: #fff;
-        cursor: pointer;
-        font-size: 20px;
-        font-weight:500;
-        border: none;
-    }
-
-    form input[type="submit"]:hover {
-        background: linear-gradient(to right, #ff4b2b, #ff416c);
-    }
-
-    form a {
-        text-decoration: none;
-        text-align: center;
-        color: #ff416c;
-        font-size: 20px;
-    }
-
-    .form-title {
-        font-size: 24px;
-        margin-bottom: 20px;
-        text-align: center;
-        color: #ff416c;
-    }
-</style>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<form action="sendotp" method="post">
-    <div class="form-title">Forget Password</div>
-    <label>Email :</label>
-    <input type="email" name="email"/>${error}
-    <input type="submit" name="search" value="Search"/>
-    <a href="login">Login</a>
-</form>
+<body class="bg-white text-white min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 p-4">
+        <div class="container mx-auto flex justify-around items-center">
+            <a href="#" class="text-white text-3xl font-bold">eCommerce</a>
+        </div>
+    </nav>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="md:hidden bg-gray-800 p-4 hidden">
+        <a href="#" class="block text-white py-2">Home</a>
+        <a href="#" class="block text-white py-2">About</a>
+        <a href="#" class="block text-white py-2">Services</a>
+        <a href="#" class="block text-white py-2">Contact</a>
+    </div>
+
+    <!-- Forget Password Form -->
+    <div class="flex justify-center items-center min-h-screen px-4">
+        <form action="sendotp" method="post" class="bg-gray-500 p-8 rounded-lg shadow-lg w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-6 text-center text-blue-400">Forget Password</h2>
+            <div class="mb-4">
+                <label for="email" class="block mb-2 text-xl text-blue-400 font-medium">Email:</label>
+                <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-transparent text-white border-2 border-white rounded focus:outline-none focus:border-blue-400" required>
+                <span class="text-red-500">${error}</span>
+            </div>
+            <button type="submit" name="search" class="w-full bg-gradient-to-r from-blue-400 to-blue-500 text-white py-2 rounded hover:from-blue-300 hover:to-blue-400 transition duration-300">Search</button>
+            <a href="login" class="block text-xl font-medium text-center mt-4 text-blue-400 hover:text-blue-300">Back to Login</a>
+        </form>
+    </div>
+
+    <script>
+        // Toggle mobile menu
+        document.querySelector('button').addEventListener('click', function() {
+            document.querySelector('.md\\:hidden.bg-gray-800').classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

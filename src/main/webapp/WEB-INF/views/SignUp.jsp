@@ -20,7 +20,7 @@
 		</div>
 		<div class="w-full h-full flex p-6 sm:p-10 direction-row items-center justify-center">
 			<div
-				class="bg-gray-600 rounded-3xl p-5 flex flex-col shadow-2xl items-center w-full sm:w-3/4 md:w-1/2 lg:w-96">
+				class="bg-gray-600 rounded-xl p-5 flex flex-col shadow-2xl items-center w-full sm:w-3/4 md:w-1/2 lg:w-96">
 				<h1 class="text-3xl text-blue-400 font-medium">SignUp</h1><br>
 				<form action="signup" method="post" class="flex flex-col w-11/12 sm:w-full gap-3 mt-3">
 					<div class="flex flex-col w-full sm:w-full">

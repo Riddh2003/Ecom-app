@@ -1,77 +1,44 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>VerifyOtp</title>
-<style>
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: 'Arial', sans-serif;
-        background-color: #000;
-        color: #fff;
-    }
-
-    form {
-        background-color: #333;
-        padding: 20px;
-        border-radius: 20px;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        width: 300px;
-        border: 1px solid #fff;
-    }
-
-    form h1 {
-        text-align: center;
-        color: #ff416c;
-        margin-bottom: 20px;
-    }
-
-    form label, form input {
-        display: block;
-        margin-bottom: 10px;
-        color: #fff;
-    }
-
-    form input[type="email"], form input[type="password"], form input[type="text"], form input[type="submit"] {
-        width: calc(100% - 30px);
-        padding: 10px;
-        border: 2px solid #ccc;
-        border-radius: 10px;
-        font-size: 16px;
-        background-color: #000;
-        color: #fff;
-    }
-
-    form input[type="submit"] {
-        background: linear-gradient(to right, #ff416c, #ff4b2b);
-        color: #fff;
-        cursor: pointer;
-        font-size: 16px;
-        border: none;
-    }
-
-    form input[type="submit"]:hover {
-        background: linear-gradient(to right, #ff4b2b, #ff416c);
-    }
-</style>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<form action="updatepassword" method="post">
-    <h1>Verify OTP</h1>
-    <label>Email</label>
-    <input type="email" name="email" required/><br>
-    <label>New Password</label>
-    <input type="password" name="password" required/><br>
-    <label>OTP</label>
-    <input type="text" name="otp" required/><br>
-    <input type="submit" name="submit" value="Submit"/>
-    <h2 style="color: #ff4b2b">${error}</h2>
-</form>
+<body class="bg-white text-white min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 p-4">
+        <div class="container mx-auto flex justify-around items-center">
+            <a href="#" class="text-white text-3xl font-bold">eCommerce</a>
+        </div>
+    </nav>
+
+    <!-- Verify OTP Form -->
+    <div class="flex justify-center items-center min-h-screen px-4">
+        <form action="updatepassword" method="post" class="bg-gray-500 p-8 rounded-xl shadow-lg w-full max-w-md">
+            <h1 class="text-2xl font-bold mb-6 text-center text-blue-500">Verify OTP</h1>
+            
+            <div class="mb-4">
+                <label for="email" class="block mb-2 text-blue-400 font-medium ">Email</label>
+                <input type="email" id="email" name="email" required class="w-full px-3 py-2 bg-transparent text-white border-2 border-white rounded focus:outline-none focus:border-blue-400">
+            </div>
+            
+            <div class="mb-4">
+                <label for="password" class="block mb-2 text-blue-400 font-medium">New Password</label>
+                <input type="password" id="password" name="password" required class="w-full px-3 py-2 bg-transparent text-white border-2 border-white rounded focus:outline-none focus:border-blue-400">
+            </div>
+            
+            <div class="mb-6">
+                <label for="otp" class="block mb-2 text-blue-400 font-medium">OTP</label>
+                <input type="text" id="otp" name="otp" required class="w-full px-3 py-2 bg-transparent text-white border-2 border-white rounded focus:outline-none focus:border-blue-400">
+            </div>
+            
+            <button type="submit" name="submit" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white text-lg font-semibold py-2 rounded hover:from-blue-400 hover:to-blue-500 transition duration-300">Submit</button>
+            
+            <h2 class="mt-4 text-red-500 text-center">${error}</h2>
+        </form>
+    </div>
 </body>
 </html>
