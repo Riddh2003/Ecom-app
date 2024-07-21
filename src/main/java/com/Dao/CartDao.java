@@ -16,7 +16,7 @@ public class CartDao {
 	JdbcTemplate stmt;
 
 	public void addcart(CartBean bean) {
-		stmt.update("insert into cart(cid,productId) values(?,?)", bean.getCid(), bean.getProductId());
+		stmt.update("insert into cart(cid,productId,qty) values(?,?,?)", bean.getCid(), bean.getProductId(), 1);
 	}
 
 	public List<ProductBean> cart(Integer cid) {
@@ -30,7 +30,22 @@ public class CartDao {
 
 	public ProductBean myproduct(Integer productId) {
 		ProductBean product = stmt.queryForObject("select * from products where productId= ?",
-				new BeanPropertyRowMapper<>(ProductBean.class), new Object[]{productId});
+				new BeanPropertyRowMapper<>(ProductBean.class), new Object[] { productId });
 		return product;
+	}
+
+	public int checkqty(CartBean bean) {
+		try {
+			CartBean cart = stmt.queryForObject("select * from cart where productId = ? and cid = ?",
+					new BeanPropertyRowMapper<>(CartBean.class), new Object[] { bean.getProductId(), bean.getCid() });
+			return cart.getQty();
+		} catch (Exception e) {
+			return 0;
+		}
+	}
+
+	public void updateCart(CartBean bean) {
+		stmt.update("update cart set qty = ? where productId= ? and cid = ? ", bean.getQty(), bean.getProductId(),
+				bean.getCid());
 	}
 }

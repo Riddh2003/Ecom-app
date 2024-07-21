@@ -11,27 +11,27 @@
 
 	<body class="bg-white flex flex-col w-full h-screen">
 		<div>
-			<nav class="bg-gray-900 text-white p-3 flex justify-between md:pl-20 md:pr-20 items-center">
+			<nav class="bg-gray-100 text-indigo-500 shadow-xl p-3 flex justify-between md:pl-20 md:pr-20 items-center">
 				<h1 class="text-2xl font-medium md:text-4xl cursor-pointer"><a>eCommerce</a></h1>
 				<h3
-					class="relative text-2xl md:text-3xl font-medium cursor-pointer hover:text-blue-400 hover:text-2xl md:hover:text-3xl hover:font-medium rounded-md p-1.5 md:block">
+					class="inherit text-xl md:text-2xl font-medium cursor-pointer hover:text-indigo-600 hover:text-2xl hover:font-medium md:block">
 					SignUp</h3>
 			</nav>
 		</div>
 		<div class="w-full h-full flex p-6 sm:p-10 direction-row items-center justify-center">
 			<div
-				class="bg-gray-600 rounded-xl p-5 flex flex-col shadow-2xl items-center w-full sm:w-3/4 md:w-1/2 lg:w-96">
-				<h1 class="text-3xl text-blue-400 font-medium">SignUp</h1><br>
+				class="bg-gray-100 rounded-lg p-5 flex flex-col shadow-xl items-center w-full sm:w-3/4 md:w-1/2 lg:w-96">
+				<h1 class="text-3xl text-indigo-500 font-medium">SignUp</h1><br>
 				<form action="signup" method="post" class="flex flex-col w-11/12 sm:w-full gap-3 mt-3">
 					<div class="flex flex-col w-full sm:w-full">
-						<label class="text-xl font-medium text-blue-400">First Name : ${error}</label>
+						<label class="text-lg font-medium text-black">First Name : ${error}</label>
 						<input type="text" name="firstname" value="${data.firstname}"
-							class="bg-transparent border-2 border-white rounded-lg p-2 h-10 text-white" />
+							class="bg-transparent border border-black focus:border-indigo-500 focus:outline-none rounded-lg p-2 h-10 text-black" />
 					</div>
 					<div class="flex flex-col w-full sm:w-full">
-						<label class="text-xl font-medium text-blue-400">Gender : ${error}</label>
+						<label class="text-lg font-medium text-black">Gender : ${error}</label>
 						<select name="gender"
-							class="bg-transparent border-2 border-white rounded-lg p-2 h-10 text-white">
+							class="bg-transparent border border-black focus:border-indigo-500 focus:outline-none rounded-lg p-2 h-10 text-black">
 							<option class="text-black" value="-1">---------Select Gender----------</option>
 							<option class="text-black" value="Male" ${data.gender.equals("Male")?"selected":""}>Male
 							</option>
@@ -42,21 +42,21 @@
 						</select>
 					</div>
 					<div class="flex flex-col w-full sm:w-full mt-2">
-						<label class="text-xl font-medium text-blue-400">Email : ${error}</label>
+						<label class="text-lg font-medium text-black">Email : ${error}</label>
 						<input type="email" name="email" value="${data.email}"
-							class="bg-transparent border-2 border-white rounded-lg p-2 h-10 text-white" />
+							class="bg-transparent border border-black focus:border-indigo-500 focus:outline-none rounded-lg p-2 h-10 text-black" />
 					</div>
 					<div class="flex flex-col w-full sm:w-full mt-2">
-						<label class="text-xl font-medium text-blue-400">Password : ${error}</label>
+						<label class="text-lg font-medium text-black">Password : ${error}</label>
 						<input type="password" name="password" value="${data.password}"
-							class="bg-transparent border-2 border-white rounded-lg p-2 h-10 text-white" />
+							class="bg-transparent border border-black focus:outline-none focus:border-indigo-500 rounded-lg p-2 h-10 text-black" />
 					</div>
-					<div class="flex flex-col w-full sm:w-full mt-6 mb-3 text-center gap-3">
+					<div class="flex flex-col w-full sm:w-full mt-2 mb-3 text-center gap-3">
 						<input type="hidden" name="role" value="customer" />
 						<input type="submit" name="submit" value="SIGN UP"
-							class="bg-transparent cursor-pointer text-2xl font-semibold border-2 border-white rounded-full h-10 text-blue-400 hover:bg-blue-400 hover:border-blue-400 hover:text-white" />
-						<p class="text-white text-lg sm:text-md">Already have an account? <a href="login"
-								class="text-blue-400 text-2xl font-medium">Login</a></p>
+							class="bg-indigo-600 cursor-pointer text-xl font-medium rounded-lg h-10 text-white hover:bg-indigo-700" />
+						<p class="text-black text-md sm:text-md">Already have an account? <a href="login"
+								class="text-indigo-500 text-xl">Login</a></p>
 					</div>
 				</form>
 			</div>

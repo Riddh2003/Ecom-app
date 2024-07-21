@@ -9,39 +9,23 @@
 </head>
 <body class="bg-white text-white min-h-screen">
     <!-- Navbar -->
-    <nav class="bg-gray-900 p-4">
+    <nav class="bg-gray-100 p-3 shadow-lg">
         <div class="container mx-auto flex justify-around items-center">
-            <a href="#" class="text-white text-3xl font-bold">eCommerce</a>
+            <a href="#" class="text-indigo-500 text-3xl md:text-4xl font-medium">eCommerce</a>
         </div>
     </nav>
-
-    <!-- Mobile menu (hidden by default) -->
-    <div class="md:hidden bg-gray-800 p-4 hidden">
-        <a href="#" class="block text-white py-2">Home</a>
-        <a href="#" class="block text-white py-2">About</a>
-        <a href="#" class="block text-white py-2">Services</a>
-        <a href="#" class="block text-white py-2">Contact</a>
-    </div>
-
     <!-- Forget Password Form -->
-    <div class="flex justify-center items-center min-h-screen px-4">
-        <form action="sendotp" method="post" class="bg-gray-500 p-8 rounded-lg shadow-lg w-full max-w-md">
-            <h2 class="text-2xl font-bold mb-6 text-center text-blue-400">Forget Password</h2>
+    <div class="flex justify-center items-center h-full mx-auto mt-10 px-4">
+        <form action="sendotp" method="post" class="bg-gray-100 p-6 rounded-lg shadow-lg w-full max-w-md">
+            <h2 class="text-xl md:text-2xl font-medium mb-4 text-center text-indigo-500">Forget Password</h2>
             <div class="mb-4">
-                <label for="email" class="block mb-2 text-xl text-blue-400 font-medium">Email:</label>
-                <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-transparent text-white border-2 border-white rounded focus:outline-none focus:border-blue-400" required>
+                <label for="email" class="block text-md md:text-lg text-black">Email:</label>
+                <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-transparent text-black border border-black rounded-md focus:outline-none focus:border-indigo-500" required>
                 <span class="text-red-500">${error}</span>
             </div>
-            <button type="submit" name="search" class="w-full bg-gradient-to-r from-blue-400 to-blue-500 text-white py-2 rounded hover:from-blue-300 hover:to-blue-400 transition duration-300">Search</button>
-            <a href="login" class="block text-xl font-medium text-center mt-4 text-blue-400 hover:text-blue-300">Back to Login</a>
+            <button type="submit" name="search" class="w-full bg-indigo-600 text-white text-md md:font-medium py-2 rounded-md hover:bg-indigo-700 transition duration-300">Search</button>
+            <a href="login" class="block text-lg md:font-medium text-center mt-2 text-indigo-500 hover:text-indigo-600">Back to Login</a>
         </form>
     </div>
-
-    <script>
-        // Toggle mobile menu
-        document.querySelector('button').addEventListener('click', function() {
-            document.querySelector('.md\\:hidden.bg-gray-800').classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>

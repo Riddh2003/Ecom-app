@@ -36,7 +36,14 @@ public class CustomerCardController {
 		CartBean bean = new CartBean();
 		bean.setCid(customerBean.getCid());
 		bean.setProductId(productId);
-		cartDao.addcart(bean);
+		int qty = cartDao.checkqty(bean);
+		if(qty ==0) {
+			cartDao.addcart(bean);
+		}
+		else {
+			bean.setQty(qty+1);
+			cartDao.updateCart(bean);
+		}
 		return "redirect:/homelistproduct";
 	}
 	
@@ -63,4 +70,5 @@ public class CustomerCardController {
 		model.addAttribute("product",product);
 		return "ViewMyCartProduct";
 	}
+	
 }

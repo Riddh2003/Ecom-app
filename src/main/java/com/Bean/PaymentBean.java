@@ -6,10 +6,14 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CartBean {
-	
-	Integer cart_Id;
+public class PaymentBean {
+
+	Integer PaymentId;
 	Integer cid;
-	Integer productId;
-	Integer qty;
+	String AuthCode;
+	String transactionStringId;
+	String Date;
+	
+	String CardNumber;
+	String amout;
 }
