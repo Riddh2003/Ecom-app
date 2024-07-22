@@ -26,20 +26,20 @@
 				<form action="authenticate" method="post" class="flex flex-col w-11/12 sm:w-full">
 					<div class="flex flex-col w-full sm:w-full">
 						<label class="text-lg font-medium text-black">Email:</label>
-						<input type="text" name="email"
-							class="bg-transparent border border-black rounded-md p-2 h-10 text-black focus:outline-none focus:border-indigo-500">
+						<input type="text" name="email" placeholder="Enter Email"
+							class="bg-transparent border border-gray-300 rounded-md p-2 h-10 text-black focus:outline-none focus:border-indigo-500">
 					</div>
-					<div class="flex flex-col w-full sm:w-full mt-2">
+					<div class="flex flex-col w-full sm:w-full mt-4">
 						<label class="text-lg font-medium text-black">Password:</label>
-						<input type="password" name="password"
-							class="bg-transparent border border-black rounded-md p-2 h-10 text-black focus:outline-none focus:border-indigo-500">
+						<input type="password" name="password" placeholder="Enter Password"
+							class="bg-transparent border border-gray-300 rounded-md p-2 h-10 text-black focus:outline-none focus:border-indigo-500">
 					</div>
 					<div class="flex flex-col w-full sm:w-full mt-6 text-center gap-3">
 						<input type="submit" value="LOGIN"
 							class="bg-indigo-600 cursor-pointer text-xl font-semibold rounded-md h-10 text-white hover:bg-indigo-700" />
 						<p class="text-black">Don't have an account? <a href="signup"
-								class="text-indigo-500 font-normal text-lg">Sign Up</a></p>
-						<p class="text-indigo-500 text-lg "><a href="forgetPassword">Forget Password?</a></p>
+								class="text-indigo-600 font-normal text-md">Sign Up</a></p>
+						<p class="text-indigo-600 text-md "><a href="forgetPassword">Forget Password?</a></p>
 					</div>
 				</form>
 			</div>

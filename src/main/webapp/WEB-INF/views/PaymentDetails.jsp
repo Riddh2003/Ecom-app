@@ -12,16 +12,16 @@
 <body class="bg-white">
 
 <!-- Navbar -->
-<nav class="bg-gray-900 text-white">
+<nav class="bg-gray-100 text-indigo-500 shadow-xl">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
-            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex-1 flex items-center justify-center sm:items-center sm:justify-start">
                 <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl md:text-3xl font-bold">eCommerce</a>
+                    <a href="customerhomepage" class="text-2xl md:text-4xl font-medium">eCommerce</a>
                 </div>
                 <div class="sm:block sm:ml-6">
                     <div class="flex space-x-4">
-                        <a href="mycart" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm md:text-lg font-medium">MyCart</a>
+                        <a href="mycart" class="hover:bg-gray-200 px-3 py-2 rounded-md text-sm md:text-lg font-medium">MyCart</a>
                     </div>
                 </div>
             </div>
@@ -30,9 +30,9 @@
 </nav>
 
 <!-- Payment Form -->
-<div class="max-w-md mx-5 md:mx-auto bg-gray-100 shadow-xl rounded-md overflow-hidden mt-10 p-6">
+<div class="max-w-md mx-5 md:mx-auto shadow-xl rounded-md overflow-hidden mt-10 p-6">
     <form action="pay" method="post" >
-        <h1 class="text-3xl font-medium mb-4 text-center text-blue-500">Payment Form</h1>
+        <h1 class="text-2xl md:text-3xl font-medium mb-4 text-center text-indigo-500">Payment Form</h1>
         <% String totalprice = request.getParameter("total");%>
         <input type="hidden" name="total" value="<%= totalprice %>"/>
         <div class="mb-4">
@@ -44,7 +44,7 @@
             <input type="text" name="expirydate" placeholder="MM-YY" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
         </div>
         <div>
-            <input type="submit" value="Pay" class="w-full cursor-pointer bg-indigo-600 text-white font-medium py-2 px-4 rounded-md hover:bg-indigo-700"/>
+            <input type="submit" value="Proceed to Pay" class="w-full cursor-pointer bg-indigo-600 text-white font-medium py-2 px-4 rounded-md hover:bg-indigo-700"/>
         </div>
     </form>
 </div>

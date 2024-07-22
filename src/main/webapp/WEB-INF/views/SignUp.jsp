@@ -24,14 +24,14 @@
 				<h1 class="text-3xl text-indigo-500 font-medium">SignUp</h1><br>
 				<form action="signup" method="post" class="flex flex-col w-11/12 sm:w-full gap-3 mt-3">
 					<div class="flex flex-col w-full sm:w-full">
-						<label class="text-lg font-medium text-black">First Name : ${error}</label>
-						<input type="text" name="firstname" value="${data.firstname}"
-							class="bg-transparent border border-black focus:border-indigo-500 focus:outline-none rounded-lg p-2 h-10 text-black" />
+						<label class="text-md font-medium text-black">First Name : ${error}</label>
+						<input type="text" name="firstname" placeholder="Enter First Name" value="${data.firstname}"
+							class="bg-transparent border border-gray-300 focus:border-indigo-500 focus:outline-none rounded-lg p-2 h-10 text-black" />
 					</div>
 					<div class="flex flex-col w-full sm:w-full">
-						<label class="text-lg font-medium text-black">Gender : ${error}</label>
+						<label class="text-md font-medium text-black">Gender : ${error}</label>
 						<select name="gender"
-							class="bg-transparent border border-black focus:border-indigo-500 focus:outline-none rounded-lg p-2 h-10 text-black">
+							class="bg-transparent border border-gray-300 focus:border-indigo-500 focus:outline-none rounded-lg p-2 h-10 text-black">
 							<option class="text-black" value="-1">---------Select Gender----------</option>
 							<option class="text-black" value="Male" ${data.gender.equals("Male")?"selected":""}>Male
 							</option>
@@ -42,14 +42,14 @@
 						</select>
 					</div>
 					<div class="flex flex-col w-full sm:w-full mt-2">
-						<label class="text-lg font-medium text-black">Email : ${error}</label>
-						<input type="email" name="email" value="${data.email}"
-							class="bg-transparent border border-black focus:border-indigo-500 focus:outline-none rounded-lg p-2 h-10 text-black" />
+						<label class="text-md font-medium text-black">Email : ${error}</label>
+						<input type="email" name="email" placeholder="Enter Email" value="${data.email}"
+							class="bg-transparent border border-gray-300 focus:border-indigo-500 focus:outline-none rounded-lg p-2 h-10 text-black" />
 					</div>
 					<div class="flex flex-col w-full sm:w-full mt-2">
-						<label class="text-lg font-medium text-black">Password : ${error}</label>
-						<input type="password" name="password" value="${data.password}"
-							class="bg-transparent border border-black focus:outline-none focus:border-indigo-500 rounded-lg p-2 h-10 text-black" />
+						<label class="text-md font-medium text-black">Password : ${error}</label>
+						<input type="password" name="password" placeholder="Enter Password" value="${data.password}"
+							class="bg-transparent border border-gray-300 focus:outline-none focus:border-indigo-500 rounded-lg p-2 h-10 text-black" />
 					</div>
 					<div class="flex flex-col w-full sm:w-full mt-2 mb-3 text-center gap-3">
 						<input type="hidden" name="role" value="customer" />

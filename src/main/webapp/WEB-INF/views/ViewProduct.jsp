@@ -11,9 +11,13 @@
 
     <body class="bg-gray-100 font-sans">
         <!-- Navbar -->
-        <nav class="bg-gray-900 text-white p-3 w-full">
+        <nav class="bg-gray-100 text-indigo-500 shadow-xl p-3 w-full">
             <div class="container mx-auto flex justify-between items-center flex-wrap">
-                <a href="#" class="text-3xl font-bold md:ml-10">eCommerce</a>
+                <div class="w-full md:w-6/12 flex justify-evenly items-center">
+                    <a href="#" class="text-4xl font-medium">eCommerce</a>
+                    <a href="admindashboard" class="hover:bg-gray-200 p-2 font-medium rounded block text-lg">Dashboard</a>
+                    <a href="products" class="hover:bg-gray-200 p-2 font-medium rounded block text-lg">Products List</a>
+                </div>
                 <button class="md:hidden text-white" id="navbar-toggle">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -21,17 +25,12 @@
                             d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
-                <ul class="flex-col md:flex md:flex-row md:space-x-4 md:mr-10 hidden md:flex" id="navbar-menu">
-                    <li><a href="admindashboard" class="hover:text-gray-300 block text-lg">Home</a></li>
-                    <li><a href="products" class="hover:text-gray-300 block text-lg">Products List</a></li>
-                    <!-- Add more navbar links as needed -->
-                </ul>
             </div>
         </nav>
 
         <!-- Product Details Section -->
         <div class="container mx-auto mt-8 md:px-4 flex justify-center">
-            <div class="w-8/12 bg-white p-6 rounded-lg shadow-xl flex flex-col md:flex-row items-center gap-6">
+            <div class="w-10/12 bg-white p-6 rounded-lg shadow-xl flex flex-col md:flex-row items-center gap-6">
                 <div class="w-full md:w-1/2 h-96">
                     <img src="${product.productImagePath}" alt="${product.productName}"
                         class="w-full h-80 md:h-full mb-4 rounded-lg shadow-lg object-cover">

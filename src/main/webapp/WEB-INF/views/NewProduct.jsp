@@ -28,12 +28,12 @@
 
 	<body class="bg-white text-gray-800">
 		<!-- Navbar -->
-		<nav class="bg-gray-900 p-4">
+		<nav class="bg-gray-100 shadow-xl text-indigo-500 p-3">
 			<div class="container mx-auto flex justify-between items-center">
-				<a href="#" class="text-white text-2xl font-bold md:ml-10">eCommerce</a>
-				<div class="hidden md:flex space-x-4 md:mr-10">
-					<a href="admindashboard" class="text-white hover:text-gray-200">Home</a>
-					<a href="products" class="text-white hover:text-gray-200">ProductList</a>
+				<div class="hidden w-6/12 md:flex justify-evenly items-center md:mr-10">
+					<a href="#" class="text-2xl md:text-4xl font-medium">eCommerce</a>
+					<a href="admindashboard" class="rounded p-2 font-medium text-lg hover:bg-gray-200">Home</a>
+					<a href="products" class="rounded p-2 font-medium text-lg hover:bg-gray-200">ProductList</a>
 				</div>
 				<button class="md:hidden text-white" onclick="toggleSidebar()">
 					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -51,30 +51,30 @@
 		<!-- Main Content -->
 		<div class="container mx-auto px-4 py-8">
 			<div class="max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-				<div class="bg-gradient-to-r from-gray-700 to-orange-500 p-4">
+				<div class="bg-gradient-to-r from-indigo-500 to-indigo-500 p-4">
 					<h1 class="text-2xl md:text-3xl font-bold text-center text-white">ADD NEW PRODUCT</h1>
 				</div>
 				<form action="saveproduct" method="post" enctype="multipart/form-data" class="p-6">
 					<div class="mb-4">
-						<label class="block text-gray-700 text-sm font-bold mb-2" for="productName">Product Name</label>
+						<label class="block text-gray-700 text-md font-medium mb-2" for="productName">Product Name</label>
 						<input
 							class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 							id="productName" type="text" name="productName">
 					</div>
 					<div class="mb-4">
-						<label class="block text-gray-700 text-sm font-bold mb-2" for="category">Category</label>
+						<label class="block text-gray-700 text-md font-medium mb-2" for="category">Category</label>
 						<input
 							class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 							id="category" type="text" name="category">
 					</div>
 					<div class="mb-4">
-						<label class="block text-gray-700 text-sm font-bold mb-2" for="price">Price</label>
+						<label class="block text-gray-700 text-md font-medium mb-2" for="price">Price</label>
 						<input
 							class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 							id="price" type="number" name="price">
 					</div>
 					<div class="mb-4">
-						<label class="block text-gray-700 text-sm font-bold mb-2" for="qty">Quantity</label>
+						<label class="block text-gray-700 text-md font-medium mb-2" for="qty">Quantity</label>
 						<input
 							class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 							id="qty" type="number" name="qty">
@@ -88,7 +88,7 @@
 					</div>
 					<div class="flex items-center justify-center">
 						<button
-							class="bg-gradient-to-r from-gray-700 to-orange-500 hover:from-gray-800 hover:to-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+							class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 							type="submit">ADD PRODUCT</button>
 					</div>
 				</form>

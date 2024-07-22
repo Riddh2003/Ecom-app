@@ -14,23 +14,23 @@
 </head>
 
 <body class="font-sans text-gray-700 bg-gray-100">
-	<nav class="bg-gray-900 text-white p-3 sticky top-0 z-10">
+	<nav class="bg-gray-100 text-indigo-500 shadow-xl p-3 sticky top-0 z-10">
 		<div class="container mx-auto flex justify-between items-center">
-			<h1 class="text-2xl md:text-4xl font-medium cursor-pointer md:ml-10">Product
-				List</h1>
-			<div>			
+			<div class="w-full md:w-6/12 flex justify-evenly items-center md:ml-5">
+				<h1 class="text-2xl md:text-4xl font-medium cursor-pointer">eCommerce</h1>
 				<a href="customerhomepage"
-					class="text-xl md:text-2xl font-medium md:mr-10 hover:bg-gray-700 rounded-md p-2 transition duration-300">Home</a>
-				<a href="mycart" class="text-xl md:text-2xl font-medium md:mr-10 hover:bg-gray-700 rounded-md p-2 transition duration-300">My Cart</a>
+					class="text-lg font-medium hover:bg-gray-200 rounded-md p-2 transition duration-300">Home</a>
+				<a href="homelistproduct" class="hidden md:block text-lg font-medium hover:bg-gray-200 rounded-md p-2 border-b-2 border-indigo-500 transition duration-300">Products List</a>
+				<a href="mycart" class="text-lg font-medium hover:bg-gray-200 rounded-md p-2 transition duration-300">My Cart</a>
 			</div>
 		</div>
 	</nav>
 
-	<section class="container mx-auto px-4 py-8">
+	<section class="container mx-auto px-4 py-4">
 		<div
-			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 m-10">
+			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 md:m-10">
 			<c:forEach items="${products}" var="p">
-				<div class="bg-white rounded-lg shadow-md overflow-hidden">
+				<div class="bg-white rounded-lg shadow-lg overflow-hidden">
 					<div class="relative h-64 cursor-pointer">
 						<c:if
 							test="${p.productImagePath == null || p.productImagePath.length() == 0}">
@@ -45,16 +45,16 @@
 						<ul
 							class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 flex justify-center space-x-4 py-3 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
 							<li><a href="addtocart?productId=${p.productId}"
-								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-indigo-500"><i
 									class="fas fa-shopping-cart"></i></a></li>
 							<li><a href="#"
-								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-indigo-500"><i
 									class="fas fa-heart"></i></a></li>
 							<li><a href="#"
-								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-indigo-500"><i
 									class="fas fa-plus"></i></a></li>
 							<li><a href="showproduct?productId=${p.productId}"
-								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-red-500"><i
+								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-indigo-500"><i
 									class="fas fa-eye"></i></a></li>
 						</ul>
 					</div>

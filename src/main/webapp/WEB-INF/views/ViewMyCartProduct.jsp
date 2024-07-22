@@ -12,28 +12,20 @@
 
     <body class="bg-white font-sans">
         <!-- Navbar -->
-        <nav class="bg-gray-900 text-white p-3">
+        <nav class="bg-gray-100 text-indigo-500 shadow-xl p-3">
             <div class="container mx-auto flex justify-between items-center flex-wrap">
-                <a href="#" class="text-4xl font-bold md:ml-10">eCommerce</a>
-                <button class="md:hidden text-white" id="navbar-toggle">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-                <ul class="flex-col md:flex md:flex-row md:space-x-4 md:mr-10 hidden md:flex" id="navbar-menu">
-                    <li><a href="customerhomepage" class="hover:text-gray-300 block text-xl ">Home</a></li>
-                    <li><a href="mycart" class="hover:text-gray-300 block text-xl">My Cart</a></li>
-                    <!-- Add more navbar links as needed -->
-                </ul>
+                <div class="w-full md:w-6/12 flex justify-evenly items-center">
+                    <a href="#" class="text-4xl font-medium">eCommerce</a>
+                    <a href="customerhomepage" class="hover:bg-gray-200 font-medium rounded p-2 block text-lg ">Home</a>
+                    <a href="mycart" class="hover:bg-gray-200 font-medium p-2 rounded block text-lg">My Cart</a>
+                </div>
             </div>
         </nav>
 
         <!-- Product Details Section -->
         <div class="container mx-auto mt-8 flex justify-center">
             <div
-                class="w-full bg-white p-6 mx-4 md:mx-10 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-10">
+                class="w-full bg-white p-6 mx-4 md:mx-10 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-10">
                 <div class="w-full md:w-1/2">
                     <img src="${product.productImagePath}" alt="${product.productName}"
                         class="w-full h-96 mb-4 rounded-lg shadow-lg">
