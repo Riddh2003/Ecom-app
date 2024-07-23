@@ -9,6 +9,50 @@
             <title>Home Page</title>
             <script src="https://cdn.tailwindcss.com"></script>
         </head>
+        <style>
+            @media screen and (min-width: 768px) {
+                #typewriter {
+                    overflow: hidden;
+                    /* Ensures the content is not revealed until the animation */
+                    border-right: .15em dashed rgb(135, 141, 255);
+                    /* The typwriter cursor */
+                    white-space: nowrap;
+                    /* Keeps the content on a single line */
+                    /* margin: 0 auto; */
+                    /* Gives that scrolling effect as the typing happens */
+                    letter-spacing: .05em;
+                    padding-bottom: 3px;
+                    /* Adjust as needed */
+                    animation:
+                        typing 3.5s steps(40, end),
+                        blink-caret .75s step-end infinite;
+                }
+
+                /* The typing effect */
+                @keyframes typing {
+                    from {
+                        width: 0
+                    }
+
+                    to {
+                        width: 95%
+                    }
+                }
+
+                /* The typewriter cursor effect */
+                @keyframes blink-caret {
+
+                    from,
+                    to {
+                        border-color: transparent;
+                    }
+
+                    50% {
+                        border-color: rgb(135, 141, 255);
+                    }
+                }
+            }
+        </style>
 
         <body class="bg-white">
             <script>
@@ -20,7 +64,7 @@
                         <h1 class="text-2xl font-medium md:text-4xl cursor-pointer"><a>eCommerce</a></h1>
                         <h3
                             class="relative text-lg font-medium cursor-pointer hover:bg-gray-200 border-b-2 border-indigo-500 rounded-md p-1.5 hidden md:block">
-                            <a href="customerhomepage" >Home</a>
+                            <a href="customerhomepage">Home</a>
                         </h3>
                         <h3
                             class="relative text-lg font-medium cursor-pointer hover:bg-gray-200 rounded-md p-1.5 hidden md:block">
@@ -40,8 +84,9 @@
                 <div class="w-full p-10 flex flex-col items-center justify-center" id="content">
                     <div class="mt-12 flex flex-row items-center flex-wrap-reverse justify-around w-full">
                         <div class="flex flex-col w-full sm:w-1/2 text-center sm:text-left sm:items-start">
-                            <h1 class="mt-1 text-2xl md:text-4xl font-medium text-center">Welcome To
-                                <span class="text-3xl md:text-4xl text-indigo-500">eCommerce Application!</span>
+                            <h1 class="mt-1 text-2xl md:text-4xl font-medium text-center" id="typewriter">Welcome
+                                To<span class="text-2xl md:text-4xl text-indigo-500"> eCommerce
+                                    Application!</span>
                             </h1>
                             <p class="mt-3 text-lg hidden md:block">We're delighted to have you here. At eCommerce, we
                                 strive to bring you the best deals and
@@ -49,7 +94,8 @@
                                 unbeatable prices, and enjoy a seamless shopping experience. <span
                                     class="text-2xl text-indigo-500 font-medium">Happy shopping!&#128522</span></p>
                         </div>
-                        <img class="w-11/12 md:h-88 md:w-1/3" src="https://pirscapital.com/wp-content/themes/pirscapital-v1/assets/images/gif-1-Revised.gif"
+                        <img class="w-11/12 md:h-88 md:w-1/3"
+                            src="https://pirscapital.com/wp-content/themes/pirscapital-v1/assets/images/gif-1-Revised.gif"
                             alt="EcomApp Image">
                     </div>
                     <div class="w-full mt-6 flex flex-row flex-wrap gap-10 items-center justify-evenly">

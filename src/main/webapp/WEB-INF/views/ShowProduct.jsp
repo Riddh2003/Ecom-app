@@ -18,6 +18,7 @@
                     <a href="#" class="text-4xl font-medium">eCommerce</a>
                     <a href="customerhomepage" class="hover:bg-gray-200 font-medium rounded p-2 block text-lg ">Home</a>
                     <a href="homelistproduct" class="hover:bg-gray-200 font-medium p-2 rounded block text-lg">Products List</a>
+                    <a href="mycart" class="hover:bg-gray-200 font-medium p-2 rounded block text-lg">My Cart</a>
                 </div>
             </div>
         </nav>
@@ -25,7 +26,7 @@
         <!-- Product Details Section -->
         <div class="container mx-auto mt-8 flex justify-center">
             <div
-                class="w-10/12 bg-white p-6 mx-4 md:mx-10 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-10">
+                class="w-10/12 bg-white p-6 mx-4 md:mx-10 rounded-lg shadow-xl flex flex-col md:flex-row items-center gap-10">
                 <div class="w-full md:w-1/2">
                     <img src="${product.productImagePath}" alt="${product.productName}"
                         class="w-full h-96 mb-4 rounded-lg shadow-lg">

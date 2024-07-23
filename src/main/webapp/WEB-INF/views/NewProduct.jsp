@@ -23,6 +23,42 @@
 				flex-direction: column;
 				gap: 1rem;
 			}
+
+			@media screen and (min-width: 768px) {
+				#typewriter {
+					overflow: hidden;
+					border-right: .15em dashed white;
+					white-space: nowrap;
+					letter-spacing: .10em;
+					animation:
+						typing 4s steps(40, end),
+						blink-caret .74s step-end infinite;
+				}
+
+				/* The typing effect */
+				@keyframes typing {
+					from {
+						width: 0
+					}
+
+					to {
+						width: 84%
+					}
+				}
+
+				/* The typewriter cursor effect */
+				@keyframes blink-caret {
+
+					from,
+					to {
+						border-color: transparent;
+					}
+
+					50% {
+						border-color: white;
+					}
+				}
+			}
 		</style>
 	</head>
 
@@ -51,12 +87,13 @@
 		<!-- Main Content -->
 		<div class="container mx-auto px-4 py-8">
 			<div class="max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-				<div class="bg-gradient-to-r from-indigo-500 to-indigo-500 p-4">
-					<h1 class="text-2xl md:text-3xl font-bold text-center text-white">ADD NEW PRODUCT</h1>
+				<div class="bg-gradient-to-r from-indigo-500 to-indigo-500 flex justify-center p-4">
+					<h1 class="text-2xl md:text-3xl font-bold text-center text-white" id="typewriter">ADD NEW PRODUCT</h1>
 				</div>
 				<form action="saveproduct" method="post" enctype="multipart/form-data" class="p-6">
 					<div class="mb-4">
-						<label class="block text-gray-700 text-md font-medium mb-2" for="productName">Product Name</label>
+						<label class="block text-gray-700 text-md font-medium mb-2" for="productName">Product
+							Name</label>
 						<input
 							class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 							id="productName" type="text" name="productName">
