@@ -16,15 +16,15 @@
     </nav>
     <!-- Forget Password Form -->
     <div class="flex justify-center items-center h-full mx-auto mt-10 px-4">
-        <form action="sendotp" method="post" class="bg-gray-100 p-6 rounded-lg shadow-lg w-full max-w-md">
+        <form action="sendotp" method="post" class="p-6 rounded-lg shadow-lg w-full max-w-md">
             <h2 class="text-xl md:text-2xl font-medium mb-4 text-center text-indigo-500">Forget Password</h2>
             <div class="mb-4">
                 <label for="email" class="block text-md md:text-lg text-black">Email:</label>
-                <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-transparent text-black border border-black rounded-md focus:outline-none focus:border-indigo-500" required>
+                <input type="email" id="email" placeholder="Enter Email" name="email" class="w-full px-3 py-2 bg-transparent text-black border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required>
                 <span class="text-red-500">${error}</span>
             </div>
             <button type="submit" name="search" class="w-full bg-indigo-600 text-white text-md md:font-medium py-2 rounded-md hover:bg-indigo-700 transition duration-300">Search</button>
-            <a href="login" class="block text-lg md:font-medium text-center mt-2 text-indigo-500 hover:text-indigo-600">Back to Login</a>
+            <a href="login" class="block text-lg text-center mt-2 text-indigo-500 hover:text-indigo-600">Back to Login</a>
         </form>
     </div>
 </body>

@@ -20,7 +20,7 @@
 		</div>
 		<div class="w-full h-full p-4 sm:p-10 flex direction-row items-center justify-center ">
 			<div
-				class="bg-gray-100 rounded-lg p-6 flex flex-col shadow-xl items-center w-full sm:w-3/4 md:w-1/2 lg:w-1/4">
+				class="rounded-lg p-6 flex flex-col shadow-xl items-center w-full sm:w-3/4 md:w-1/2 lg:w-1/4">
 				<p class="text-red-600 text-xl">${error}</p>
 				<h1 class="text-3xl text-indigo-500 font-medium">Login</h1><br>
 				<form action="authenticate" method="post" class="flex flex-col w-11/12 sm:w-full">

@@ -144,7 +144,7 @@ public class SessionController {
 			dao.updateotp(customerBean.getEmail(), "");
 			return "redirect:/login";
 		} else {
-			model.addAttribute("error","Data I	nvaild.");
+			model.addAttribute("error","Data Invaild.");
 			return "VerifyOtp";
 		}
 	}
