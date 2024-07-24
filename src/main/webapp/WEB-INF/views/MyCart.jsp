@@ -36,10 +36,10 @@
 				<div class="flex flex-col items-center">
 					<c:forEach items="${products}" var="p">
 						<div
-							class="bg-white flex flex-col md:flex-row rounded-lg shadow-md overflow-hidden w-full h-full sm:w-3/4 md:w-8/12 mb-6">
+							class="bg-white flex flex-col justify-between md:flex-row rounded-lg shadow-md overflow-hidden w-full h-full sm:w-3/4 md:w-8/12 mb-6">
 							<img src="${p.productImagePath}" alt="${p.productName}"
 								class="w-full md:w-1/2 h-80 object-cover">
-							<div class="p-6 w-full md:w-1/2 flex flex-col justify-evenly">
+							<div class="p-4 w-full md:w-1/2 flex flex-col justify-evenly">
 								<div class="flex justify-center items-center">
 									<h2 class="text-2xl font-medium mr-2">${p.productName}</h2>
 									<span class="text-2xl font-medium text-gray-500">${p.category}</span>
@@ -53,11 +53,21 @@
 									<p class="text-gray-600 mb-2">Quantity: ${p.qty}</p>
 									<div>
 										<a href="removefromcart?productId=${p.productId}"
-											class="text-red-500 rounded hover:text-red-700 p-2 hover:bg-indigo-100"> <i class="fas fa-trash"></i>
+											class="text-red-500 rounded hover:text-red-700 p-2 hover:bg-indigo-100"> <i
+												class="fas fa-trash"></i>
 										</a> <a href="viewcartproduct?productId=${p.productId}"
-											class="text-blue-500 rounded hover:text-blue-700 p-2 hover:bg-indigo-100"> <i class="fas fa-eye"></i>
+											class="text-blue-500 rounded hover:text-blue-700 p-2 hover:bg-indigo-100">
+											<i class="fas fa-eye"></i>
 										</a>
 									</div>
+								</div>
+								<div class="w-full flex justify-evenly items-center">
+									<a href="carttocart?productId=${p.productId}"
+										class="w-1/3 text-center text-black p-2 shadow-md bg-indigo-100 rounded-sm hover:text-indigo-500"><i
+											class="fas fa-plus"></i></a>
+									<a href="minustocart?productId=${p.productId}"
+										class="w-1/3 text-center text-black p-2 shadow-md bg-indigo-100 rounded-sm hover:text-indigo-500"><i
+											class="fas fa-minus"></i></a>
 								</div>
 							</div>
 						</div>

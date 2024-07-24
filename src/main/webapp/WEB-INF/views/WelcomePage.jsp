@@ -15,12 +15,12 @@
       border-right: .10em dashed white;
       /* The typwriter cursor */
       white-space: nowrap;
-      letter-spacing: .10em;
+      letter-spacing: .05em;
       padding-bottom: 3px;
       /* Adjust as needed */
       animation:
         typing 3s steps(40, end),
-        blink-caret .74s step-end infinite;
+        blink-caret .75s step-end infinite;
     }
 
     /* The typing effect */
@@ -30,7 +30,7 @@
       }
 
       to {
-        width: 85%
+        width: 80%
       }
     }
 

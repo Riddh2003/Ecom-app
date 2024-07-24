@@ -45,7 +45,11 @@ public class CartDao {
 	}
 
 	public void updateCart(CartBean bean) {
-		stmt.update("update cart set qty = ? where productId= ? and cid = ? ", bean.getQty(), bean.getProductId(),
-				bean.getCid());
+		try{
+			stmt.update("update cart set qty = ? where productId= ? and cid = ? ", bean.getQty(), bean.getProductId(),
+					bean.getCid());
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }

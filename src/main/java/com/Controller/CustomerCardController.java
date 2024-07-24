@@ -47,6 +47,34 @@ public class CustomerCardController {
 		return "redirect:/homelistproduct";
 	}
 	
+	@GetMapping("/carttocart")
+	public String cartToCart(@RequestParam("productId") Integer productId,HttpSession session) {
+		CustomerBean customerBean = (CustomerBean)session.getAttribute("customer");
+		CartBean bean = new CartBean();
+		bean.setCid(customerBean.getCid());
+		bean.setProductId(productId);
+		int qty = cartDao.checkqty(bean);
+		if(qty>=1){
+			bean.setQty(qty+1);
+			cartDao.updateCart(bean);
+		}
+		return "redirect:/mycart";
+	}
+
+	@GetMapping("/minustocart")
+	public String minusToCart(@RequestParam("productId") Integer productId,HttpSession session) {
+		CustomerBean customerbean = (CustomerBean)session.getAttribute("customer");
+		CartBean bean = new CartBean();
+		bean.setCid(customerbean.getCid());
+		bean.setProductId(productId);
+		int qty = cartDao.checkqty(bean);
+		if(qty>=1){
+			bean.setQty(qty-1);
+			cartDao.updateCart(bean);
+		}
+		return "redirect:/mycart";
+	}
+	
 	@GetMapping("/mycart")
 	public String myCart(HttpSession session,Model model) {
 		CustomerBean customer = (CustomerBean) session.getAttribute("customer");

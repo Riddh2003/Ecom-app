@@ -22,7 +22,7 @@
                 padding-bottom: 3px;
                 /* Adjust as needed */
                 animation:
-                    typing 2s steps(40, end),
+                    typing 1s steps(40, end),
                     blink-caret .74s step-end infinite;
             }
 

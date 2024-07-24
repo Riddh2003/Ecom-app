@@ -50,9 +50,6 @@
 							<li><a href="#"
 								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-indigo-500"><i
 									class="fas fa-heart"></i></a></li>
-							<li><a href="#"
-								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-indigo-500"><i
-									class="fas fa-plus"></i></a></li>
 							<li><a href="showproduct?productId=${p.productId}"
 								class="text-black border p-2 border-gray-100 bg-gray-100 rounded-sm hover:text-indigo-500"><i
 									class="fas fa-eye"></i></a></li>

@@ -31,8 +31,8 @@
 					white-space: nowrap;
 					letter-spacing: .10em;
 					animation:
-						typing 4s steps(40, end),
-						blink-caret .74s step-end infinite;
+						typing 2s steps(40, end),
+						blink-caret .75s step-end infinite;
 				}
 
 				/* The typing effect */
@@ -68,8 +68,8 @@
 			<div class="container mx-auto flex justify-between items-center">
 				<div class="hidden w-6/12 md:flex justify-evenly items-center md:mr-10">
 					<a href="#" class="text-2xl md:text-4xl font-medium">eCommerce</a>
-					<a href="admindashboard" class="rounded p-2 font-medium text-lg hover:bg-gray-200">Home</a>
-					<a href="products" class="rounded p-2 font-medium text-lg hover:bg-gray-200">ProductList</a>
+					<a href="admindashboard" class="rounded p-2 font-medium text-lg hover:bg-gray-200">Dashboard</a>
+					<a href="products" class="rounded p-2 font-medium text-lg hover:bg-gray-200">Product List</a>
 				</div>
 				<button class="md:hidden text-white" onclick="toggleSidebar()">
 					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
