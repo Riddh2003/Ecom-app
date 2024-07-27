@@ -19,6 +19,6 @@ public class PaymentController {
 	public String payment(@RequestParam("total") String total,PaymentBean paymentBean) {
 		paymentBean.setAmout(total);
 		PaymentService.run(paymentBean);
-		return "redirect:/buy";
+		return "PaymentDetails";
 	}
 }

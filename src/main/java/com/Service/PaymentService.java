@@ -14,14 +14,16 @@ import net.authorize.api.controller.base.ApiOperationBase;
 public class PaymentService {
 	
     public static ANetApiResponse run(PaymentBean paymentBean) {
+    	String apiloginID="67hfCY4v";
+    	String transactionKey="5HtU3fN29a2a2FuZ";
 
         // Set the request to operate in either the sandbox or production environment
         ApiOperationBase.setEnvironment(Environment.SANDBOX);
 
         // Create object with merchant authentication details
         MerchantAuthenticationType merchantAuthenticationType  = new MerchantAuthenticationType() ;
-        merchantAuthenticationType.setName("bizdev05");
-        merchantAuthenticationType.setTransactionKey("4kJd237rZu59qAZd");
+        merchantAuthenticationType.setName(apiloginID);
+        merchantAuthenticationType.setTransactionKey(transactionKey);
 
         // Populate the payment data
         PaymentType paymentType = new PaymentType();
@@ -74,6 +76,10 @@ public class PaymentService {
                 }
             } else {
                 System.out.println("Failed Transaction.");
+                
+                System.out.println(response.getTransactionResponse());
+
+                System.out.println("--------------------------------");
                 if (response.getTransactionResponse() != null && response.getTransactionResponse().getErrors() != null) {
                     System.out.println("Error Code: " + response.getTransactionResponse().getErrors().getError().get(0).getErrorCode());
                     System.out.println("Error message: " + response.getTransactionResponse().getErrors().getError().get(0).getErrorText());
@@ -84,8 +90,13 @@ public class PaymentService {
             }
         } else {
             // Display the error code and message when response is null 
-            ANetApiResponse errorResponse = controller.getErrorResponse();
-            System.out.println("Failed to get response");
+        	System.out.println("Failed to get response");
+            
+        	ANetApiResponse errorResponse = controller.getErrorResponse();
+
+        	System.out.println(errorResponse);
+        	
+        	System.out.println("--------------------------------------");
             if (!errorResponse.getMessages().getMessage().isEmpty()) {
                 System.out.println("Error: "+errorResponse.getMessages().getMessage().get(0).getCode()+" \n"+ errorResponse.getMessages().getMessage().get(0).getText());
             }

@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>
 		4.0.0
 	</modelVersion>
 	<parent>
-		<groupId>
-			org.springframework.boot
-		</groupId>
-		<artifactId>
-			spring-boot-starter-parent
-		</artifactId>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>
 			3.3.0
 		</version>
@@ -140,7 +137,8 @@
 				jakarta.servlet.jsp.jstl-api
 			</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<!--
+		https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 		<dependency>
 			<groupId>
 				org.hibernate
@@ -152,7 +150,8 @@
 				8.0.1.Final
 			</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto -->
+		<!--
+		https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto -->
 		<dependency>
 			<groupId>
 				org.springframework.security
@@ -161,7 +160,8 @@
 				spring-security-crypto
 			</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail -->
+		<!--
+		https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail -->
 		<dependency>
 			<groupId>
 				org.springframework.boot
@@ -170,7 +170,8 @@
 				spring-boot-starter-mail
 			</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<!--
+		https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<dependency>
 			<groupId>
 				commons-fileupload
@@ -183,11 +184,8 @@
 			</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
-			<groupId>
-				commons-io
-			</groupId>
+			<groupId>commons-io</groupId>
 			<artifactId>
 				commons-io
 			</artifactId>
@@ -208,15 +206,9 @@
 			</version>
 		</dependency>
 		<dependency>
-			<groupId>
-				javax.xml.bind
-			</groupId>
-			<artifactId>
-				jaxb-api
-			</artifactId>
-			<version>
-				2.3.1
-			</version>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0-b170201.1204</version>
 		</dependency>
 		<dependency>
 			<groupId>
@@ -241,6 +233,12 @@
 			<artifactId>
 				jaxb-runtime
 			</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1</version>
 		</dependency>
 	</dependencies>
 	<build>

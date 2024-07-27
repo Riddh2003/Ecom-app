@@ -28,9 +28,8 @@
             <!-- Payment Form -->
             <div class="max-w-md mx-5 md:mx-auto shadow-xl rounded-md overflow-hidden mt-10 p-6">
                 <form action="pay" method="post">
-                    <h1 class="text-2xl md:text-3xl font-medium mb-4 text-center text-indigo-500">Payment Form</h1>
+                    <h1 class="text-2xl md:text-3xl font-medium mb-4 text-center text-indigo-500">Payment Method</h1>
                     <% String totalprice=request.getParameter("total");%>
-                        <input type="hidden" name="total" value="<%= totalprice %>" />
                         <div class="mb-4">
                             <label class="block text-gray-700">Card Number:</label>
                             <input type="text" name="cardnumber" placeholder="Card Number"
@@ -39,6 +38,11 @@
                         <div class="mb-4">
                             <label class="block text-gray-700">Expiry Date:</label>
                             <input type="text" name="expirydate" placeholder="MM-YY"
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700">Amount:</label>
+                        	<input type="text" name="total" value="<%= totalprice %>"
                                 class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                         </div>
                         <div>
