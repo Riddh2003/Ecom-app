@@ -32,17 +32,17 @@
                     <% String totalprice=request.getParameter("total");%>
                         <div class="mb-4">
                             <label class="block text-gray-700">Card Number:</label>
-                            <input type="text" name="cardnumber" placeholder="Card Number"
+                            <input type="text" name="CardNumber" placeholder="Card Number"
                                 class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700">Expiry Date:</label>
-                            <input type="text" name="expirydate" placeholder="MM-YY"
+                            <input type="text" name="Date" placeholder="MM-YY"
                                 class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700">Amount:</label>
-                        	<input type="text" name="total" value="<%= totalprice %>"
+                        	<input type="text" name="amount" value="<%= totalprice %>"
                                 class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                         </div>
                         <div>

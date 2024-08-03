@@ -13,7 +13,7 @@ import net.authorize.api.controller.base.ApiOperationBase;
 @Service
 public class PaymentService {
 	
-    public static ANetApiResponse run(PaymentBean paymentBean) {
+    public ANetApiResponse run(PaymentBean paymentBean) {
     	String apiloginID="67hfCY4v";
     	String transactionKey="5HtU3fN29a2a2FuZ";
 
@@ -41,7 +41,7 @@ public class PaymentService {
         txnRequest.setTransactionType(TransactionTypeEnum.AUTH_CAPTURE_TRANSACTION.value());
         txnRequest.setPayment(paymentType);
         txnRequest.setCustomer(customer);
-        txnRequest.setAmount(new BigDecimal(paymentBean.getAmout()).setScale(2, RoundingMode.CEILING));
+        txnRequest.setAmount(new BigDecimal(paymentBean.getAmount()).setScale(2, RoundingMode.CEILING));
 
         // Create the API request and set the parameters for this specific request
         CreateTransactionRequest apiRequest = new CreateTransactionRequest();
