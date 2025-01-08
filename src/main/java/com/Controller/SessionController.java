@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.Bean.CustomerBean;
 import com.Dao.CustomerDao;
 import com.Service.OtpService;
-
 import jakarta.servlet.http.HttpSession;
 
 @Controller
