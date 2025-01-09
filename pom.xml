@@ -55,6 +55,11 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>splide</artifactId>
+				<version>3.6.12</version>
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -117,9 +122,7 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/net.authorize/anet-java-sdk -->
 		<dependency>
-			<groupId>
-				net.authorize
-			</groupId>
+			<groupId>net.authorize</groupId>
 			<artifactId>anet-java-sdk</artifactId>
 			<version>1.9.3</version>
 		</dependency>
